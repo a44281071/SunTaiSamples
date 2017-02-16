@@ -4,3 +4,4 @@
 
 - WPF.FileDownload
 - WPF.SingleInstance
+- HandleLastInputTime

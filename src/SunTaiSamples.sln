@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WPF", "WPF", "{3DF184D2-D2E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingleInstance", "SingleInstance\SingleInstance.csproj", "{6BEE47F9-315C-4CBF-989E-36DA6BE4676C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandleLastInputTime", "HandleLastInputTime\HandleLastInputTime.csproj", "{35747A12-6BF4-49F1-BEAB-43C279F0950E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{6BEE47F9-315C-4CBF-989E-36DA6BE4676C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BEE47F9-315C-4CBF-989E-36DA6BE4676C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BEE47F9-315C-4CBF-989E-36DA6BE4676C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35747A12-6BF4-49F1-BEAB-43C279F0950E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35747A12-6BF4-49F1-BEAB-43C279F0950E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35747A12-6BF4-49F1-BEAB-43C279F0950E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35747A12-6BF4-49F1-BEAB-43C279F0950E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

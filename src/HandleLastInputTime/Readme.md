@@ -1,0 +1,3 @@
+﻿# HandleLastInputTime
+
+Like screen saver.
