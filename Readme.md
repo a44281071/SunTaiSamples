@@ -2,5 +2,5 @@
 
 ### Projects
 
-1. WPF.FileDownload
-1. WPF.SingleInstance
+- WPF.FileDownload
+- WPF.SingleInstance
