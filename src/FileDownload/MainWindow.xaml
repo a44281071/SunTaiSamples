@@ -1,0 +1,33 @@
+﻿<Window x:Class="FileDownload.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FileDownload"
+        FontSize="18"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Height="500"
+        Width="800">
+  <Grid VerticalAlignment="Center">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="auto" />
+      <RowDefinition Height="auto" />
+      <RowDefinition Height="auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <Border Grid.Row="0">
+      <TextBox Name="txtUrl"
+               Text="http://www.thereforesystems.com/wp-content/uploads/2008/08/image35.png" />
+    </Border>
+    <Border Grid.Row="1">
+      <Button Content="Download"
+              Name="btnDownload"
+              Click="btnDownload_Click" />
+    </Border>
+    <Border Grid.Row="2">
+      <ProgressBar Height="20"
+                   Name="pgbProgress" />
+    </Border>
+  </Grid>
+</Window>
