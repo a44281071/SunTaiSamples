@@ -13,9 +13,7 @@ namespace FileDownload
     private static readonly int BufferSize = 32768;
 
     public async Task DownloadFileAsync(string url, string filePath, IProgress<int> progress, CancellationToken cancellationToken = default(CancellationToken))
-    {
-      //bool resumeDownload = IsResume(url, filePath);
-      string tempFileName = filePath + ".temp";
+    { 
       FileMode fm = FileMode.Create;
       this._downloadStopWatch.Start();
       try
@@ -31,9 +29,9 @@ namespace FileDownload
 
         cancellationToken.ThrowIfCancellationRequested();
 
-        if (File.Exists(tempFileName))
+        if (File.Exists(filePath))
         {
-          FileInfo fn = new FileInfo(tempFileName);
+          FileInfo fn = new FileInfo(filePath);
           httpWebRequest.AddRange(fn.Length);
           downloadedLength = fn.Length;
           fm = FileMode.Append;
@@ -41,7 +39,7 @@ namespace FileDownload
 
         using (var response = (HttpWebResponse)(await httpWebRequest.GetResponseAsync()))
         using (var netStream = response.GetResponseStream())
-        using (var fileStream = new FileStream(tempFileName, fm))
+        using (var fileStream = new FileStream(filePath, fm))
         {
           cancellationToken.ThrowIfCancellationRequested();
 
