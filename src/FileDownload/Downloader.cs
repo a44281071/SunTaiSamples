@@ -14,12 +14,15 @@ namespace FileDownload
 
     private readonly string _DirectoryPath;
 
+    /// <summary>
+    /// default http client download
+    /// </summary>
     public async Task<string> Download(string fileName, string address, IProgress<int> progress)
     {
       string file = Path.Combine(_DirectoryPath, fileName);
       string url = address;
 
-      using (WebClient client = new WebClient())
+      using (WebClient client = new SuperWebClient())
       {
         client.DownloadProgressChanged += (ss, ee) =>
         {
@@ -30,7 +33,7 @@ namespace FileDownload
         {
           await client.DownloadFileTaskAsync(url, file);
         }
-        catch 
+        catch
         {
           File.Delete(file);
           throw;
@@ -38,6 +41,6 @@ namespace FileDownload
       }
 
       return file;
-    }
+    }    
   }
 }

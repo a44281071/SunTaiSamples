@@ -14,6 +14,7 @@
       <RowDefinition Height="auto" />
       <RowDefinition Height="auto" />
       <RowDefinition Height="auto" />
+      <RowDefinition Height="auto" />
       <RowDefinition Height="*" />
     </Grid.RowDefinitions>
     <Border Grid.Row="0">
@@ -28,6 +29,11 @@
     <Border Grid.Row="2">
       <ProgressBar Height="20"
                    Name="pgbProgress" />
+    </Border>
+    <Border Grid.Row="3">
+      <TextBlock Height="20"
+                 HorizontalAlignment="Center"
+                 Name="txtProgress" />
     </Border>
   </Grid>
 </Window>

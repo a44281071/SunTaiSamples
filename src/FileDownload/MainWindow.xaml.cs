@@ -20,22 +20,65 @@ namespace FileDownload
 
     private async void btnDownload_Click(object sender, RoutedEventArgs e)
     {
+      //await DownloadFileAsync();
+
+      await SuperDownloadFileAsync();
+    }
+
+    private async Task DownloadFileAsync()
+    {
       try
       {
+        Stopwatch sWatch = new Stopwatch();
         IProgress<int> progress = new Progress<int>(dd =>
         {
           pgbProgress.Value = dd;
-          // display delay.
-          Task.Delay(300);
+          txtProgress.Text = $"{sWatch.Elapsed.TotalSeconds}s：{dd}%";
         });
         string fileName = Path.GetRandomFileName();
         string url = txtUrl.Text;
 
         // start download file.
+        sWatch.Restart();
         string fileFullName = await _Downloader.Download(fileName, url, progress);
 
         // open dir explorer and select file.
         ShowWorkDir(fileFullName);
+      }
+      catch (Exception ex)
+      {
+        MessageBox.Show(ex.Message + "\n" + ex.InnerException?.Message);
+      }
+      finally
+      {
+        // reset progress display.
+        pgbProgress.Value = 0;
+      }
+    }
+
+    private async Task SuperDownloadFileAsync()
+    {
+      try
+      {
+        Stopwatch sWatch = new Stopwatch();
+        IProgress<int> progress = new Progress<int>(dd =>
+        {
+          Dispatcher.Invoke(() =>
+          {
+            pgbProgress.Value = dd;
+            txtProgress.Text = $"{sWatch.Elapsed.TotalSeconds}s：{dd}%";
+          });
+        });
+        string fileName = Path.Combine(App.WORK_DIR, "textabc.exe");
+        string url = txtUrl.Text;
+
+        // start download file.
+        sWatch.Restart();
+        var sDownloader = new DownloadManager();
+        await sDownloader.DownloadFileAsync(url, fileName, progress);
+
+        // open dir explorer and select file.        
+        ShowWorkDir(fileName);
       }
       catch (Exception ex)
       {
