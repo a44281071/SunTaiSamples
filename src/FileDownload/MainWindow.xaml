@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FileDownload"
+        DataContext="{Binding RelativeSource={x:Static RelativeSource.Self},Path=ViewModel}"
         FontSize="18"
         mc:Ignorable="d"
         Title="MainWindow"
@@ -18,21 +19,29 @@
       <RowDefinition Height="*" />
     </Grid.RowDefinitions>
     <Border Grid.Row="0">
-      <TextBox Name="txtUrl"
-               Text="http://www.thereforesystems.com/wp-content/uploads/2008/08/image35.png" />
+      <DockPanel>
+        <Label Content="U_rl:" Target="{Binding ElementName=txtUrl}"/>
+        <TextBox Name="txtUrl"
+                 Text="{Binding Path=Url}" />
+      </DockPanel>
+     
     </Border>
-    <Border Grid.Row="1">
+    <UniformGrid Grid.Row="1" Rows="1">
       <Button Content="Download"
               Name="btnDownload"
               Click="btnDownload_Click" />
-    </Border>
+      <Button Content="Cancel"
+              Name="btnCancel"
+              Click="btnCancel_Click" />
+    </UniformGrid>
     <Border Grid.Row="2">
       <ProgressBar Height="20"
+                   Value="{Binding Path=Progress}"
                    Name="pgbProgress" />
     </Border>
     <Border Grid.Row="3">
       <TextBlock Height="20"
-                 HorizontalAlignment="Center"
+                 Text="{Binding Path=Progress,StringFormat='{}{0}%'}"      HorizontalAlignment="Center"
                  Name="txtProgress" />
     </Border>
   </Grid>

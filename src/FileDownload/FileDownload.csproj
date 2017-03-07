@@ -71,6 +71,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DownloadManager.cs" />
+    <Compile Include="MainViewModel.cs" />
+    <Compile Include="PropertyChangedBase.cs" />
     <Compile Include="SuperWebClient.cs">
       <SubType>Component</SubType>
     </Compile>

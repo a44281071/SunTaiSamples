@@ -10,23 +10,26 @@ namespace FileDownload
   internal class DownloadManager
   {
     private Stopwatch _downloadStopWatch = new Stopwatch();
-    private static readonly int BufferSize = 32768;
+    private static readonly int BufferSize = 32768;  // 32KB
+    private readonly int _HttpTimeout = 30 * 1000;
+    private readonly int _SteamTimeout = 30 * 1000;
 
     public async Task DownloadFileAsync(string url, string filePath, IProgress<int> progress, CancellationToken cancellationToken = default(CancellationToken))
-    { 
+    {
       FileMode fm = FileMode.Create;
       this._downloadStopWatch.Start();
       try
       {
         Uri installerUrl = new Uri(url);
-        HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create(url);
-        httpWebRequest.Proxy.Credentials = CredentialCache.DefaultCredentials;
-
         double contentLength = await GetContentLengthAsync(url);
         byte[] buffer = new byte[BufferSize];
         long downloadedLength = 0;
         int currentDataLength;
 
+        HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create(url);
+        httpWebRequest.Timeout = _HttpTimeout;
+        httpWebRequest.ReadWriteTimeout = _SteamTimeout;
+        httpWebRequest.Proxy.Credentials = CredentialCache.DefaultCredentials;
         cancellationToken.ThrowIfCancellationRequested();
 
         if (File.Exists(filePath))
@@ -81,10 +84,12 @@ namespace FileDownload
     private async Task<long> GetContentLengthAsync(string url)
     {
       HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create(url);
+      httpWebRequest.Timeout = _HttpTimeout;
       httpWebRequest.Proxy.Credentials = CredentialCache.DefaultCredentials;
-      var res = (HttpWebResponse)(await httpWebRequest.GetResponseAsync());
-
-      return res.ContentLength;
+      using (var req = (HttpWebResponse)(await httpWebRequest.GetResponseAsync()))
+      {
+        return req.ContentLength;
+      }
     }
 
     private static bool GetAcceptRanges(WebResponse res)
