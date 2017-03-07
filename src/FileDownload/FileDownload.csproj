@@ -70,7 +70,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="DownloadManager.cs" />
+    <Compile Include="Converters\FileSizeByteUnitConverter.cs" />
+    <Compile Include="DownloadArgs.cs" />
+    <Compile Include="SuperDownloader.cs" />
     <Compile Include="MainViewModel.cs" />
     <Compile Include="PropertyChangedBase.cs" />
     <Compile Include="SuperWebClient.cs">
@@ -84,7 +86,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Downloader.cs" />
+    <Compile Include="SimpleDownloader.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

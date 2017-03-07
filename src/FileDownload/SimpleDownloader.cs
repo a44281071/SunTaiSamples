@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace FileDownload
 {
-  public class Downloader
+  public class SimpleDownloader
   {
-    public Downloader(string directoryPath)
+    public SimpleDownloader(string directoryPath)
     {
       _DirectoryPath = directoryPath;
     }

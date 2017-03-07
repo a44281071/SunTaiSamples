@@ -36,7 +36,7 @@ namespace FileDownload
 
         // start download file.
         sWatch.Restart();
-        Downloader _Downloader = new Downloader(App.WORK_DIR);
+        SimpleDownloader _Downloader = new SimpleDownloader(App.WORK_DIR);
         string fileFullName = await _Downloader.Download(fileName, url, progress);
 
         // open dir explorer and select file.

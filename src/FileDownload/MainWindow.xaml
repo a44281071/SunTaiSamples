@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:converter="clr-namespace:FileDownload.Converters"
         xmlns:local="clr-namespace:FileDownload"
         DataContext="{Binding RelativeSource={x:Static RelativeSource.Self},Path=ViewModel}"
         FontSize="18"
@@ -10,8 +11,15 @@
         Title="MainWindow"
         Height="500"
         Width="800">
+
+  <Window.Resources>
+    <converter:FileSizeByteUnitConverter x:Key="fileSizeByteUnitConverter" />
+  </Window.Resources>
+
   <Grid VerticalAlignment="Center">
     <Grid.RowDefinitions>
+      <RowDefinition Height="auto" />
+      <RowDefinition Height="auto" />
       <RowDefinition Height="auto" />
       <RowDefinition Height="auto" />
       <RowDefinition Height="auto" />
@@ -20,13 +28,14 @@
     </Grid.RowDefinitions>
     <Border Grid.Row="0">
       <DockPanel>
-        <Label Content="U_rl:" Target="{Binding ElementName=txtUrl}"/>
+        <Label Content="U_rl:"
+               Target="{Binding ElementName=txtUrl}" />
         <TextBox Name="txtUrl"
                  Text="{Binding Path=Url}" />
       </DockPanel>
-     
     </Border>
-    <UniformGrid Grid.Row="1" Rows="1">
+    <UniformGrid Grid.Row="1"
+                 Rows="1">
       <Button Content="Download"
               Name="btnDownload"
               Click="btnDownload_Click" />
@@ -41,8 +50,14 @@
     </Border>
     <Border Grid.Row="3">
       <TextBlock Height="20"
-                 Text="{Binding Path=Progress,StringFormat='{}{0}%'}"      HorizontalAlignment="Center"
+                 Text="{Binding Path=Progress,StringFormat='{}{0}%'}"
+                 HorizontalAlignment="Center"
                  Name="txtProgress" />
+    </Border>
+    <Border Grid.Row="4">
+      <TextBlock Height="20"
+                 Text="{Binding Path=DownloadSpeed,Converter={StaticResource fileSizeByteUnitConverter}}"
+                 HorizontalAlignment="Center" />
     </Border>
   </Grid>
 </Window>
