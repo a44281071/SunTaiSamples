@@ -6,7 +6,7 @@ namespace SingleInstance
 {
   public partial class App : Application
   {
-    private const string UnqueKey = "{124D19DC-50AC-4134-84A7-8432E2CA6E8E}";
+    private const string UNQUE_KEY = "{124D19DC-50AC-4134-84A7-8432E2CA6E8E}";
     static SimpleSingleInstance _SimpleSingleInstance;
 
     public App()
@@ -18,7 +18,7 @@ namespace SingleInstance
     private void EnsureSingleInstance()
     {
       _SimpleSingleInstance 
-        = new SimpleSingleInstance(UnqueKey, OnEventWaitHandleWaitOne);
+        = new SimpleSingleInstance(UNQUE_KEY, OnEventWaitHandleWaitOne);
       if (!_SimpleSingleInstance.IsOwned)
       {
         Shutdown();
@@ -39,6 +39,5 @@ namespace SingleInstance
       System.Diagnostics.Process.Start(ResourceAssembly.Location);
       Current.Shutdown();
     }
-
   }
 }
