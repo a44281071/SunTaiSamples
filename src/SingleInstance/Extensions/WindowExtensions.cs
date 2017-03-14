@@ -2,6 +2,10 @@
 {
   internal static class WindowExtensions
   {
+    /// <summary>
+    /// active the window to foreground.
+    /// </summary>
+    /// <param name="window">the window element</param>
     internal static void BringToForeground(this Window window)
     {
       if (window.WindowState == WindowState.Minimized || window.Visibility == Visibility.Hidden)
