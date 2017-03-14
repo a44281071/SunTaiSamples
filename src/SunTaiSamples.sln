@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileDownload", "FileDownload\FileDownload.csproj", "{683435CB-C7B1-4637-AEBC-80048A1F6AD3}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandleLastInputTime", "HandleLastInputTime\HandleLastInputTime.csproj", "{35747A12-6BF4-49F1-BEAB-43C279F0950E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomCefSharp", "CustomCefSharp\CustomCefSharp.csproj", "{EE558FAD-A7F3-4C5B-BF32-003B1C64023B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyDance", "DependencyDance\DependencyDance.csproj", "{13D0DDAA-7F96-4780-9234-1B712730723B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,14 @@ Global
 		{EE558FAD-A7F3-4C5B-BF32-003B1C64023B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EE558FAD-A7F3-4C5B-BF32-003B1C64023B}.Release|x86.ActiveCfg = Release|x86
 		{EE558FAD-A7F3-4C5B-BF32-003B1C64023B}.Release|x86.Build.0 = Release|x86
+		{13D0DDAA-7F96-4780-9234-1B712730723B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13D0DDAA-7F96-4780-9234-1B712730723B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13D0DDAA-7F96-4780-9234-1B712730723B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{13D0DDAA-7F96-4780-9234-1B712730723B}.Debug|x86.Build.0 = Debug|Any CPU
+		{13D0DDAA-7F96-4780-9234-1B712730723B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13D0DDAA-7F96-4780-9234-1B712730723B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13D0DDAA-7F96-4780-9234-1B712730723B}.Release|x86.ActiveCfg = Release|Any CPU
+		{13D0DDAA-7F96-4780-9234-1B712730723B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,5 +71,6 @@ Global
 		{683435CB-C7B1-4637-AEBC-80048A1F6AD3} = {3DF184D2-D2EE-4A85-BED9-1C62F09B3673}
 		{6BEE47F9-315C-4CBF-989E-36DA6BE4676C} = {3DF184D2-D2EE-4A85-BED9-1C62F09B3673}
 		{EE558FAD-A7F3-4C5B-BF32-003B1C64023B} = {3DF184D2-D2EE-4A85-BED9-1C62F09B3673}
+		{13D0DDAA-7F96-4780-9234-1B712730723B} = {3DF184D2-D2EE-4A85-BED9-1C62F09B3673}
 	EndGlobalSection
 EndGlobal
