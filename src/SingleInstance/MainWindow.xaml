@@ -12,6 +12,10 @@
   <WrapPanel>
     <Button Padding="10"
             Margin="10"
+            Click="btnClose_Click"
+            Content="CloseMainWindow" />
+    <Button Padding="10"
+            Margin="10"
             Click="btnRestart_Click"
             Content="Restart" />
   </WrapPanel>

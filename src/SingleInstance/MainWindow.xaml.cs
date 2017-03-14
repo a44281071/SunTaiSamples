@@ -9,9 +9,15 @@ namespace SingleInstance
       InitializeComponent();
     }
 
+    private void btnClose_Click(object sender, RoutedEventArgs e)
+    {
+      Close();
+    }
+
     private void btnRestart_Click(object sender, RoutedEventArgs e)
     {
       App.Restart();
     }
+
   }
 }
