@@ -55,9 +55,12 @@
                  Name="txtProgress" />
     </Border>
     <Border Grid.Row="4">
-      <TextBlock Height="20"
-                 Text="{Binding Path=DownloadSpeed,Converter={StaticResource fileSizeByteUnitConverter}}"
-                 HorizontalAlignment="Center" />
+      <StackPanel Orientation="Horizontal"
+                  HorizontalAlignment="Center">
+        <TextBlock Text="Speed:" />
+        <TextBlock  MinWidth="100"
+                    Text="{Binding Path=DownloadSpeed,Converter={StaticResource fileSizeByteUnitConverter}}" />
+      </StackPanel>
     </Border>
   </Grid>
 </Window>

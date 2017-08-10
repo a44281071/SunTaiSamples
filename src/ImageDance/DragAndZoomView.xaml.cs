@@ -13,21 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DependencyDance
+namespace ImageDance
 {
   /// <summary>
-  /// MainWindow.xaml 的交互逻辑
+  /// DragAndZoomView.xaml 的交互逻辑
   /// </summary>
-  public partial class MainWindow : Window
+  public partial class DragAndZoomView : UserControl
   {
-    public MainWindow()
+    public DragAndZoomView()
     {
       InitializeComponent();
-    }
-
-    private void MarqueeWindow_Click(object sender, RoutedEventArgs e)
-    {
-      new MarqueeWindow().ShowDialog();
     }
   }
 }

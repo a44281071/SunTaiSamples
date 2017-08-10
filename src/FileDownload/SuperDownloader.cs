@@ -15,10 +15,16 @@ namespace FileDownload
 
     private Stopwatch _Stopwatch = new Stopwatch();
 
+    /// <summary>
+    /// download speed limit.(byte/s).
+    /// 0: no limit.
+    /// </summary>
+    public long SpeedLimit { get; set; }
+
     public async Task DownloadFileAsync(string url
       , string filePath
       , IProgress<DownloadArgs> progress
-      , CancellationToken cancellationToken = default(CancellationToken))
+      , CancellationToken ct = default(CancellationToken))
     {
       FileMode fm = FileMode.Create;
       long lastSpeedDownloadedLength = 0;
@@ -33,7 +39,7 @@ namespace FileDownload
       httpWebRequest.Timeout = _HttpTimeout;
       httpWebRequest.ReadWriteTimeout = _SteamTimeout;
       httpWebRequest.Proxy.Credentials = CredentialCache.DefaultCredentials;
-      cancellationToken.ThrowIfCancellationRequested();
+      ct.ThrowIfCancellationRequested();
 
       if (File.Exists(filePath))
       {
@@ -47,13 +53,19 @@ namespace FileDownload
       using (var netStream = response.GetResponseStream())
       using (var fileStream = new FileStream(filePath, fm))
       {
-        cancellationToken.ThrowIfCancellationRequested();
+        ct.ThrowIfCancellationRequested();
         _Stopwatch.Restart();
-
-        while ((currentDataLength = await netStream.ReadAsync(buffer, 0, BufferSize)) > 0)
+        long speed = SpeedLimit;
+        // update speed limit
+        int sleep = SpeedLimit <= 0 ? 0 : (int)Math.Floor(1000d * BufferSize / SpeedLimit) + 1;
+        while ((currentDataLength = await netStream.ReadAsync(buffer, 0, BufferSize, ct)) > 0)
         {
-          cancellationToken.ThrowIfCancellationRequested();
-
+          ct.ThrowIfCancellationRequested();
+          // update speed limit
+          if (speed != SpeedLimit)
+          {
+            sleep = SpeedLimit <= 0 ? 0 : (int)Math.Floor(1000d * BufferSize / SpeedLimit) + 1;
+          }
           await fileStream.WriteAsync(buffer, 0, currentDataLength);
           downloadedLength += currentDataLength;
 
@@ -68,6 +80,12 @@ namespace FileDownload
           }
 
           #endregion ProgressReport
+
+          // try sleep for speed limit
+          if (sleep > 0)
+          {
+            await Task.Delay(sleep).ConfigureAwait(false);
+          }
         }
         progress.Report(new DownloadArgs(contentLength, contentLength, 0));
       }

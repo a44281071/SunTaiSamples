@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DependencyDance"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+        FontSize="18"
+        Title="MainWindow"
+        Height="350"
+        Width="525">
+  
+  <ScrollViewer>
+    <WrapPanel>
+      <Button x:Name="MarqueeWindow"
+              Content="MarqueeWindow"
+              Click="MarqueeWindow_Click" />
+    </WrapPanel>
+  </ScrollViewer>
 </Window>

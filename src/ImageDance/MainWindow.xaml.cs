@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DependencyDance
+namespace ImageDance
 {
   /// <summary>
   /// MainWindow.xaml 的交互逻辑
@@ -23,11 +23,6 @@ namespace DependencyDance
     public MainWindow()
     {
       InitializeComponent();
-    }
-
-    private void MarqueeWindow_Click(object sender, RoutedEventArgs e)
-    {
-      new MarqueeWindow().ShowDialog();
     }
   }
 }

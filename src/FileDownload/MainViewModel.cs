@@ -54,6 +54,7 @@ namespace FileDownload
 
     /// <summary>
     /// start download file async.
+    /// speed limit 123kb/s.
     /// </summary>
     public async Task DownloadFileAsync(string filePath, CancellationToken cancellationToken)
     {
@@ -66,6 +67,8 @@ namespace FileDownload
 
       // start download async.
       var sDownloader = new SuperDownloader();
+      //sDownloader.SpeedLimit = 123 * 1024;
+      sDownloader.SpeedLimit = 0;
       await sDownloader.DownloadFileAsync(Url, filePath, progress, cancellationToken);
     }
   }
