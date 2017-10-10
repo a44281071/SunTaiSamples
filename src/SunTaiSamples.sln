@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.13
+VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileDownload", "FileDownload\FileDownload.csproj", "{683435CB-C7B1-4637-AEBC-80048A1F6AD3}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyDance", "DependencyDance\DependencyDance.csproj", "{13D0DDAA-7F96-4780-9234-1B712730723B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageDance", "ImageDance\ImageDance.csproj", "{3F43B2AD-F71E-4CBF-9909-43A3DAD30F47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfCore", "WpfCore\WpfCore.csproj", "{9B945E09-BF29-4566-91CA-9C8E4AE63708}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,6 +75,14 @@ Global
 		{3F43B2AD-F71E-4CBF-9909-43A3DAD30F47}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3F43B2AD-F71E-4CBF-9909-43A3DAD30F47}.Release|x86.ActiveCfg = Release|Any CPU
 		{3F43B2AD-F71E-4CBF-9909-43A3DAD30F47}.Release|x86.Build.0 = Release|Any CPU
+		{9B945E09-BF29-4566-91CA-9C8E4AE63708}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B945E09-BF29-4566-91CA-9C8E4AE63708}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B945E09-BF29-4566-91CA-9C8E4AE63708}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9B945E09-BF29-4566-91CA-9C8E4AE63708}.Debug|x86.Build.0 = Debug|Any CPU
+		{9B945E09-BF29-4566-91CA-9C8E4AE63708}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B945E09-BF29-4566-91CA-9C8E4AE63708}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B945E09-BF29-4566-91CA-9C8E4AE63708}.Release|x86.ActiveCfg = Release|Any CPU
+		{9B945E09-BF29-4566-91CA-9C8E4AE63708}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,5 +93,6 @@ Global
 		{EE558FAD-A7F3-4C5B-BF32-003B1C64023B} = {3DF184D2-D2EE-4A85-BED9-1C62F09B3673}
 		{13D0DDAA-7F96-4780-9234-1B712730723B} = {3DF184D2-D2EE-4A85-BED9-1C62F09B3673}
 		{3F43B2AD-F71E-4CBF-9909-43A3DAD30F47} = {3DF184D2-D2EE-4A85-BED9-1C62F09B3673}
+		{9B945E09-BF29-4566-91CA-9C8E4AE63708} = {3DF184D2-D2EE-4A85-BED9-1C62F09B3673}
 	EndGlobalSection
 EndGlobal

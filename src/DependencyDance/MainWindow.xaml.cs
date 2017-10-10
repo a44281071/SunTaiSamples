@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DependencyDance.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,6 +29,11 @@ namespace DependencyDance
     private void MarqueeWindow_Click(object sender, RoutedEventArgs e)
     {
       new MarqueeWindow().ShowDialog();
+    }
+
+    private void MenuCommandWindow_Click(object sender, RoutedEventArgs e)
+    {
+      new MenuCommandWindow().ShowDialog();
     }
   }
 }

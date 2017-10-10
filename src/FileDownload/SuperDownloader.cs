@@ -64,6 +64,7 @@ namespace FileDownload
           // update speed limit
           if (speed != SpeedLimit)
           {
+            speed = SpeedLimit;
             sleep = SpeedLimit <= 0 ? 0 : (int)Math.Floor(1000d * BufferSize / SpeedLimit) + 1;
           }
           await fileStream.WriteAsync(buffer, 0, currentDataLength);
