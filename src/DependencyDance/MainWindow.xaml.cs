@@ -35,5 +35,11 @@ namespace DependencyDance
     {
       new MenuCommandWindow().ShowDialog();
     }
+
+    private void AutoScrollToListEnd_Click(object sender, RoutedEventArgs e)
+    {
+      new AutoScrollToListEndWindow().ShowDialog();
+
+    }
   }
 }

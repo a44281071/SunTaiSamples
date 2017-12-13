@@ -15,6 +15,7 @@
     <WrapPanel>
       <Button Click="MarqueeWindow_Click" Content="MarqueeWindow" />
       <Button Click="MenuCommandWindow_Click" Content="MenuCommandWindow" />
+      <Button Click="AutoScrollToListEnd_Click" Content="AutoScrollToListEnd" />
     </WrapPanel>
   </ScrollViewer>
 </Window>
