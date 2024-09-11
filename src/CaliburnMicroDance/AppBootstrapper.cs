@@ -1,45 +1,45 @@
 namespace CaliburnMicroDance
 {
-  using System;
-  using System.Collections.Generic;
-  using Caliburn.Micro;
+    using System;
+    using System.Collections.Generic;
+    using Caliburn.Micro;
 
-  public class AppBootstrapper : BootstrapperBase
-  {
-    SimpleContainer container;
-
-    public AppBootstrapper()
+    public class AppBootstrapper : BootstrapperBase
     {
-      Initialize();
-    }
+        SimpleContainer container;
 
-    protected override void Configure()
-    {
-      container = new SimpleContainer();
+        public AppBootstrapper()
+        {
+            Initialize();
+        }
 
-      container.Singleton<IWindowManager, WindowManager>();
-      container.Singleton<IEventAggregator, EventAggregator>();
-      container.PerRequest<IShell, ShellViewModel>();
-    }
+        protected override void Configure()
+        {
+            container = new SimpleContainer();
 
-    protected override object GetInstance(Type service, string key)
-    {
-      return container.GetInstance(service, key);
-    }
+            container.Singleton<IWindowManager, WindowManager>();
+            container.Singleton<IEventAggregator, EventAggregator>();
+            container.PerRequest<IShell, ShellViewModel>();
+        }
 
-    protected override IEnumerable<object> GetAllInstances(Type service)
-    {
-      return container.GetAllInstances(service);
-    }
+        protected override object GetInstance(Type service, string key)
+        {
+            return container.GetInstance(service, key);
+        }
 
-    protected override void BuildUp(object instance)
-    {
-      container.BuildUp(instance);
-    }
+        protected override IEnumerable<object> GetAllInstances(Type service)
+        {
+            return container.GetAllInstances(service);
+        }
 
-    protected override void OnStartup(object sender, System.Windows.StartupEventArgs e)
-    {
-      DisplayRootViewFor<IShell>();
+        protected override void BuildUp(object instance)
+        {
+            container.BuildUp(instance);
+        }
+
+        protected override void OnStartup(object sender, System.Windows.StartupEventArgs e)
+        {
+            _ = DisplayRootViewForAsync<IShell>();
+        }
     }
-  }
 }

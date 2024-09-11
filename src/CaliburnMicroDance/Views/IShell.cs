@@ -1,3 +1,4 @@
-namespace CaliburnMicroDance {
-    public interface IShell {}
-}
+namespace CaliburnMicroDance;
+
+public interface IShell
+{ }

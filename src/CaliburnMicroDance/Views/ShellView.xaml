@@ -1,12 +1,22 @@
-<Window x:Class="CaliburnMicroDance.ShellView"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+<Window x:Class="CaliburnMicroDance.ShellView" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+        FontSize="14" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        mc:Ignorable="d" 
+        d:DesignHeight="450" 
+        Height="500" 
+        Width="800" 
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <Grid Background="White">
-        <TextBlock Text="Hello Caliburn Micro!"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Center"
-                   FontSize="20" />
-    </Grid>
+  <DockPanel Background="White">
+    <Border DockPanel.Dock="Top" Background="AliceBlue"/>
+    <Border Background="WhiteSmoke" DockPanel.Dock="Left">
+      <ListBox Name="Items" DisplayMemberPath="DisplayName"/>
+    </Border>
+    <Border >
+      <ContentControl Name="ActiveItem"/>
+    </Border>
+  </DockPanel>
 
 </Window>
