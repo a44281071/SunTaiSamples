@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2003
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35506.116 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileDownload", "FileDownload\FileDownload.csproj", "{683435CB-C7B1-4637-AEBC-80048A1F6AD3}"
 EndProject
@@ -20,6 +20,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfCore", "WpfCore\WpfCore.csproj", "{9B945E09-BF29-4566-91CA-9C8E4AE63708}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicroDance", "CaliburnMicroDance\CaliburnMicroDance.csproj", "{FB3BE9E1-FFB7-4DB8-8369-D43875AD4E78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfMpvPlayer", "WpfMpvPlayer\WpfMpvPlayer.csproj", "{2B5E4BFA-9488-4342-9F96-51C53FDF2DA4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +95,14 @@ Global
 		{FB3BE9E1-FFB7-4DB8-8369-D43875AD4E78}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FB3BE9E1-FFB7-4DB8-8369-D43875AD4E78}.Release|x86.ActiveCfg = Release|Any CPU
 		{FB3BE9E1-FFB7-4DB8-8369-D43875AD4E78}.Release|x86.Build.0 = Release|Any CPU
+		{2B5E4BFA-9488-4342-9F96-51C53FDF2DA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B5E4BFA-9488-4342-9F96-51C53FDF2DA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B5E4BFA-9488-4342-9F96-51C53FDF2DA4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2B5E4BFA-9488-4342-9F96-51C53FDF2DA4}.Debug|x86.Build.0 = Debug|Any CPU
+		{2B5E4BFA-9488-4342-9F96-51C53FDF2DA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B5E4BFA-9488-4342-9F96-51C53FDF2DA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B5E4BFA-9488-4342-9F96-51C53FDF2DA4}.Release|x86.ActiveCfg = Release|Any CPU
+		{2B5E4BFA-9488-4342-9F96-51C53FDF2DA4}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
