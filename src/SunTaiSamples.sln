@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35506.116 d17.12
+VisualStudioVersion = 17.12.35506.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileDownload", "FileDownload\FileDownload.csproj", "{683435CB-C7B1-4637-AEBC-80048A1F6AD3}"
 EndProject
@@ -22,6 +22,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicroDance", "CaliburnMicroDance\CaliburnMicroDance.csproj", "{FB3BE9E1-FFB7-4DB8-8369-D43875AD4E78}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfMpvPlayer", "WpfMpvPlayer\WpfMpvPlayer.csproj", "{2B5E4BFA-9488-4342-9F96-51C53FDF2DA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestGrpcShare", "TestGrpcShare\TestGrpcShare.csproj", "{11A7F507-DAE7-4FBD-9E67-D999878B33DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -103,6 +105,14 @@ Global
 		{2B5E4BFA-9488-4342-9F96-51C53FDF2DA4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2B5E4BFA-9488-4342-9F96-51C53FDF2DA4}.Release|x86.ActiveCfg = Release|Any CPU
 		{2B5E4BFA-9488-4342-9F96-51C53FDF2DA4}.Release|x86.Build.0 = Release|Any CPU
+		{11A7F507-DAE7-4FBD-9E67-D999878B33DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11A7F507-DAE7-4FBD-9E67-D999878B33DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11A7F507-DAE7-4FBD-9E67-D999878B33DD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{11A7F507-DAE7-4FBD-9E67-D999878B33DD}.Debug|x86.Build.0 = Debug|Any CPU
+		{11A7F507-DAE7-4FBD-9E67-D999878B33DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11A7F507-DAE7-4FBD-9E67-D999878B33DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11A7F507-DAE7-4FBD-9E67-D999878B33DD}.Release|x86.ActiveCfg = Release|Any CPU
+		{11A7F507-DAE7-4FBD-9E67-D999878B33DD}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
